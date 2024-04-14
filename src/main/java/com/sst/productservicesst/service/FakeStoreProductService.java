@@ -33,7 +33,7 @@ public class FakeStoreProductService implements ProductService{
         //convert fakestore DTO object to product object
 
         if (fakeStoreProductDTO == null) {
-            throw new ProductNotFound("Not found product with id: " + id);
+            throw new ProductNotFound(id,"Not found product with id: " + id);
         }
 
         Product product = new Product();
@@ -43,5 +43,10 @@ public class FakeStoreProductService implements ProductService{
         product.setDescription(fakeStoreProductDTO.getDescription());
         product.setImage(fakeStoreProductDTO.getImage());
         return product;
+    }
+
+    @Override
+    public Product createProduct(Product product) {
+        return null;
     }
 }

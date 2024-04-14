@@ -8,4 +8,6 @@ import java.util.ArrayList;
 public interface ProductService {
     ArrayList<Product> getAllProducts();
     Product getProductById(Long id);
+
+    Product createProduct(Product product);
 }

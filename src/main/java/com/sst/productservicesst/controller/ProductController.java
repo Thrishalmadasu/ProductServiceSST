@@ -31,24 +31,24 @@ public class ProductController {
 
 
     @GetMapping("/{id}")
-    public ResponseEntity getProductByID(@PathVariable("id") Long id){
+    public Product getProductByID(@PathVariable("id") Long id){
 
 
-        ResponseEntity<Product> responseEntity;
-        try{
-           Product product = productService.getProductById(id);
-           responseEntity=new ResponseEntity<>(product, org.springframework.http.HttpStatus.OK);
-            return responseEntity;
-        }
-        catch (RuntimeException e) {
-            ExceptionDto dto = new ExceptionDto();
-            dto.setMessage("Product not found");
-            dto.setResolution("Do nothing");
-            ResponseEntity<ExceptionDto> response = new ResponseEntity<>(dto, org.springframework.http.HttpStatus.NOT_FOUND);
-            System.out.println("Product not found");
-            return response;
-        }
+//        ResponseEntity<Product> responseEntity;
+//        try{
+//           Product product = productService.getProductById(id);
+//           responseEntity=new ResponseEntity<>(product, org.springframework.http.HttpStatus.OK);
+//            return responseEntity;
+//        }
+//        catch (RuntimeException e) {
+//            ExceptionDto dto = new ExceptionDto();
+//            dto.setMessage("Product not found");
+//            dto.setResolution("Do nothing");
+//            ResponseEntity<ExceptionDto> response = new ResponseEntity<>(dto, org.springframework.http.HttpStatus.NOT_FOUND);
+//            System.out.println("Product not found");
+//            return response;
+//        }
 
-//        return productService.getProductById(id);
+        return productService.getProductById(id);
     }
 }
