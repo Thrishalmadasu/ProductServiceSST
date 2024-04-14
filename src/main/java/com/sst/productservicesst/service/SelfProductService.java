@@ -7,10 +7,11 @@ import com.sst.productservicesst.exceptions.ProductNotFound;
 import com.sst.productservicesst.models.Category;
 import com.sst.productservicesst.models.Product;
 import com.sst.productservicesst.service.ProductService;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Optional;
-
+@Service("selfProductService")
 public class SelfProductService implements ProductService {
     private ProductRepository productRepository;
     private CategoryRepository categoryRepository;

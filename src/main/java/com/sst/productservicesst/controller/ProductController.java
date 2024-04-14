@@ -5,6 +5,7 @@ import com.sst.productservicesst.DTO.FakeStoreProductDTO;
 import com.sst.productservicesst.models.Product;
 import com.sst.productservicesst.service.FakeStoreProductService;
 import com.sst.productservicesst.service.ProductService;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,7 +21,7 @@ import java.util.ArrayList;
 public class ProductController {
     private ProductService productService;
 
-    ProductController(ProductService productService){
+    ProductController(@Qualifier("selfProductService") ProductService productService){
         this.productService=productService;
     }
 
